@@ -1,12 +1,12 @@
 {
-  "name": "mernstack",
+  "name": "backEnd",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "client": "npm start --prefix client",
+    "client": "ng serve --prefix paper-kit-2-pro-angular",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Nizar",
