@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
             navbar.classList.remove('nav-up');
         }
     }
-    ngOnDestroy(){
+    // tslint:disable-next-line: use-life-cycle-interface
+    ngOnDestroy() {
         var body = document.getElementsByTagName('body')[0];
         body.classList.remove('full-screen');
         body.classList.remove('login');
