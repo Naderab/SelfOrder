@@ -12,11 +12,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { PresentationModule } from './presentation/presentation.module';
+import { AdminModule } from './admin/admin.module';
+import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent
+        NavbarComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -27,7 +29,9 @@ import { PresentationModule } from './presentation/presentation.module';
         PresentationModule,
         SectionsModule,
         ComponentsModule,
-        ExamplesModule
+        ExamplesModule,
+        AdminModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -29,8 +29,9 @@ export class AppComponent implements OnInit {
 
         var st = window.pageYOffset;
         // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
+        if(Math.abs(lastScrollTop - st) <= delta) {
             return;
+        }
 
         var navbar = document.getElementsByTagName('nav')[0];
 
