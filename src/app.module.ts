@@ -12,7 +12,13 @@ import { MenusModule } from './menus/menus.module';
     useUnifiedTopology:true,
     useCreateIndex: true,
     useFindAndModify:false
-}), AuthModule, ModifierGroupModule, CategoryModule, ItemsModule, MenusModule],
+}), 
+MenusModule,
+ AuthModule,
+ ModifierGroupModule, 
+ CategoryModule, 
+ ItemsModule
+ ],
   
 })
 export class AppModule {}

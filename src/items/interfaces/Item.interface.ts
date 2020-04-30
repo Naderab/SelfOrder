@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
-import { Description, Title } from "src/interfaces";
+
 import { NutritionalInfo } from "./NutritionalInfo";
 import { QuantityInfo } from "./QuantityInfo.interface";
 import { ModifierGroupIds } from "./ModifierGroupIds.interface";
@@ -7,8 +7,8 @@ import { PriceInfo } from "./PriceInfo.interface";
 import { TaxInfo } from "./Taxinfo.interface";
 
     export interface Item extends Document {
-        description: Description;
-        title: Title;
+        description: string;
+        title: string;
         nutritional_info: NutritionalInfo;
         quantity_info: QuantityInfo;
         external_data?: any;

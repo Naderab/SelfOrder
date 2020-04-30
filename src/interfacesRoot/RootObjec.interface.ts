@@ -1,9 +1,9 @@
 import { Document } from "mongoose";
-import { Item } from "./Item.interface";
+import { Item } from "../items/interfaces/Item.interface";
 import { DisplayOptions } from "./DisplayOptions.interface";
-import { Menu } from "./Menu.interface";
-import { Category } from "./Category.interfaces";
-import { ModifierGroup } from "./ModifierGroup.interface";
+import { Menu } from "../menus/interfaces/Menu.interface";
+import { Category } from "../category/interfaces/Category.interfaces";
+import { ModifierGroup } from "../modifier-group/interfaces/ModifierGroup.interface";
 
     export interface RootObject extends Document {
         items: Item[];
