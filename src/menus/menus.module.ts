@@ -7,7 +7,9 @@ import { MenuSchema } from './schemas/Manur.schema';
 
 @Module({
   imports:[ MongooseModule.forFeature([
-    { name: 'Menu', schema: MenuSchema }])],
+    { name: 'Menu', schema: MenuSchema }
+  ])
+  ],
   controllers: [MenusController],
   providers: [MenusService]
 })

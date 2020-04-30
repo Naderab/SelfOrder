@@ -17,5 +17,5 @@ import { TaxInfo } from "./Taxinfo.interface";
         image_url?: any;
         price_info: PriceInfo;
         tax_info: TaxInfo;
-        id: string;
+      
     }
