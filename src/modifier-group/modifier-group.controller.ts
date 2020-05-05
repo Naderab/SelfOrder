@@ -14,7 +14,7 @@ export class ModifierGroupController {
             }
     @Get('/all')
     getAll():Promise<ModifierGroup[]>{
-return this.MgService.getallMg();
+    return this.MgService.getallMg();
     }
     @Get('/:id')
     getById(@Param('id') id:string):Promise<ModifierGroup>{
@@ -24,6 +24,7 @@ return this.MgService.getallMg();
     deleteMg(@Param('id') id : string){
         this.MgService.deleteMg(id);
     }
+    
 
 
 }
