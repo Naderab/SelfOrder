@@ -2,11 +2,7 @@ import * as mongoose from 'mongoose';
 
 export const CategorySchema = new mongoose.Schema({
     entities: [{
-        Entity:{
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Entity"
-        }
+        types: String,
     }],
-    
     title: String,
 })
