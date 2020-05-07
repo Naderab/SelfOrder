@@ -6,7 +6,7 @@ import { MenuDto } from './dto/menueDto';
 
 @Injectable()
 export class MenusService {
-  constructor(@InjectModel('Menu') private MenuModel: Model<Menu>) {}
+  constructor(@InjectModel('Menu') private MenuModel: Model<Menu>) { }
 
   async addMenue(menuDto: MenuDto): Promise<Menu> {
     const Menu = new this.MenuModel(menuDto);
@@ -15,8 +15,13 @@ export class MenusService {
   async getMenus(): Promise<Menu[]> {
     try {
       return await this.MenuModel.find()
-        .populate('category_ids')
-        .populate('items');
+        .populate({
+          path: 'category_ids',
+          populate: [{
+            path: 'items',
+            model: 'Item'
+          }]
+        }).exec();
     } catch (error) {
       throw new NotFoundException('No Menus Found');
     }
