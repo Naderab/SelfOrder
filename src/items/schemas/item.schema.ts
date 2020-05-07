@@ -12,10 +12,9 @@ export const ItemSchema = new mongoose.Schema({
   quantity_info: {},
   external_data: mongoose.Schema.Types.Mixed,
   suspension_info: mongoose.Schema.Types.Mixed,
-  modifier_group_ids: {
-    overrides: [mongoose.Schema.Types.Mixed],
-    ids: [mongoose.Schema.Types.ObjectId],
-  },
+  modifier_group_ids: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'ModifierGroup' },
+  ],
   image_url: mongoose.Schema.Types.Mixed,
   price_info: {
     price: Number,

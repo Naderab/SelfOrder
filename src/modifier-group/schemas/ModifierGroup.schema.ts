@@ -18,5 +18,6 @@ export const ModifierGroupSchema = new mongoose.Schema({
         types: String,
     }],
     display_type:mongoose.Schema.Types.Mixed,
+    id:String
     
 })
