@@ -1,7 +1,6 @@
-import { Entity } from "../interfaces/Entity.interface";
+import { Entity } from '../interfaces/Entity.interface';
 
 export class CreateCategoryDto {
-    entities: Entity[];
-  
-    title: string;
+  items: any[];
+  title: string;
 }

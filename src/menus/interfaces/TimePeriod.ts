@@ -1,6 +1,6 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 
 export interface TimePeriod extends Document {
-    start_time: string;
-    end_time: string;
+  start_time: string;
+  end_time: string;
 }

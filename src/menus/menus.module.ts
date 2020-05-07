@@ -4,13 +4,9 @@ import { MenusService } from './menus.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MenuSchema } from './schemas/Manur.schema';
 
-
 @Module({
-  imports:[ MongooseModule.forFeature([
-    { name: 'Menu', schema: MenuSchema }
-  ])
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'Menu', schema: MenuSchema }])],
   controllers: [MenusController],
-  providers: [MenusService]
+  providers: [MenusService],
 })
 export class MenusModule {}

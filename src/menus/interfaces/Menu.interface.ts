@@ -1,9 +1,9 @@
-import { Document } from "mongoose";
-import { ServiceAvailability } from "./ServiceAvailability";
+import { Document } from 'mongoose';
+import { ServiceAvailability } from './ServiceAvailability';
 
 export interface Menu extends Document {
-    service_availability: ServiceAvailability[];
-    category_ids: string[];
-    title: string;
-    id:string;
+  service_availability: ServiceAvailability[];
+  category_ids: string[];
+  title: string;
+  id: string;
 }

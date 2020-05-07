@@ -1,6 +1,5 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose';
 
 export interface Entity extends Document {
-    types: string;
-    
+  item: string;
 }

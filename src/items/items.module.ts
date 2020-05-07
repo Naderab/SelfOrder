@@ -4,11 +4,9 @@ import { ItemsService } from './items.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ItemSchema } from './schemas/item.schema';
 
-
 @Module({
-  imports:[ MongooseModule.forFeature([
-    { name: 'Item', schema: ItemSchema }])],
+  imports: [MongooseModule.forFeature([{ name: 'Item', schema: ItemSchema }])],
   controllers: [ItemsController],
-  providers: [ItemsService]
+  providers: [ItemsService],
 })
 export class ItemsModule {}
