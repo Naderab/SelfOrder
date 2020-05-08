@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import * as mongoose from 'mongoose';
-import { CategorySchema } from 'src/category/schemas/category.schema';
 
 export const MenuSchema = new mongoose.Schema({
   service_availability: [
