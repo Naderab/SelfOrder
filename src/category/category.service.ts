@@ -44,4 +44,7 @@ export class CategoryService {
       );
     }
   }
+  async addItemToCategory(id:string,idI:string):Promise<Category>{
+    return await this.CategoryModel.findOneAndUpdate({"_id":id},{$push:{"items":idI}}).populate('items');
+  }
 }

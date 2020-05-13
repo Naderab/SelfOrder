@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Delete, Body, Post } from '@nestjs/common';
+import { Controller, Get, Param, Delete, Body, Post, Put } from '@nestjs/common';
 import { Item } from './interfaces/Item.interface';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/createItemDto';
@@ -23,5 +23,9 @@ export class ItemsController {
   @Get('/:id')
   getItemByid(@Param('id') id: string): Promise<Item> {
     return this.ItemService.getItemById(id);
+  }
+  @Put('/:id')
+  addModifierGroupToItem(@Param('id') id:string,@Body('idMg') idMg:string ):Promise<Item>{
+    return this.ItemService.addModifierGroupToItem(id,idMg);
   }
 }

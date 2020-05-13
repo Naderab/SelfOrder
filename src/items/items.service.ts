@@ -35,6 +35,10 @@ export class ItemsService {
                 return await this.ItemModel.findOneAndUpdate({id},{$set:createItem});
             }
         }
+        async addModifierGroupToItem(idI:string,IdMG:string):Promise<Item>{
+            return await this.ItemModel.findOneAndUpdate({"_id":idI},{$push:{'modifier_group_ids':IdMG}}).populate('modifier_group_ids');
+
+        }
 
 
 

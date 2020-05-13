@@ -11,7 +11,7 @@ export class CreateItemDto {
   quantity_info: QuantityInfo;
   external_data?: any;
   suspension_info?: any;
-  modifier_group_ids: ModifierGroupIds;
+  modifier_group_ids: any[];
   image_url?: any;
   price_info: PriceInfo;
   tax_info: TaxInfo;
