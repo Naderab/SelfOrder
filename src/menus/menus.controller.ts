@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, Put } from '@nestjs/common';
 import { MenusService } from './menus.service';
 import { MenuDto } from './dto/menueDto';
 import { Menu } from './interfaces/Menu.interface';
@@ -25,5 +25,9 @@ export class MenusController {
   @Delete('/:id')
   DeleteMenu(@Param('id') id: string) {
     this.menuService.deleteMenu(id);
+  }
+  @Put('/:id')
+  addCategoryToMEnu(@Param('id') id:string,@Body('idC') idC:string ):Promise<Menu>{
+    return this.menuService.addCategoryToMenu(id,idC);
   }
 }

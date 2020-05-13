@@ -41,4 +41,8 @@ export class MenusService {
       throw new NotFoundException('Menu Not Found');
     }
   }
+  async addCategoryToMenu(idM:string,IdC:string):Promise<Menu>{
+    return await this.MenuModel.findOneAndUpdate({"_id":idM},{$push:{'category_ids':IdC}}).populate('category_ids');
+
+}
 }
