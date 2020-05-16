@@ -19,10 +19,10 @@ export class CategoryService {
     return await cat.save();
   }
   async getCategories(): Promise<Category[]> {
-    return await this.CategoryModel.find().populate('items');
+    return await this.CategoryModel.find().populate('items').populate('menus');
   }
   async getCatById(_id: string): Promise<Category> {
-    const cat = await this.CategoryModel.findOne({ _id: _id }).populate('item');
+    const cat = await this.CategoryModel.findOne({ _id: _id }).populate('item').populate('menus');;
     if (!cat) {
       throw new NotFoundException('category not found');
     }
