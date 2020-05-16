@@ -9,11 +9,12 @@ export class CategoryService {
   constructor(
     @InjectModel('Category') private CategoryModel: Model<Category>,
   ) {}
-  async createCat(CreateCategoryDto: CreateCategoryDto): Promise<Category> {
+  async createCat(categoryDto: CreateCategoryDto): Promise<Category> {
     const cat = new this.CategoryModel();
 
-    cat.items = CreateCategoryDto.items;
-    cat.title = CreateCategoryDto.title;
+    cat.items = categoryDto.items;
+    cat.title = categoryDto.title;
+    cat.menus = categoryDto.menus;
     console.log(cat);
     return await cat.save();
   }
