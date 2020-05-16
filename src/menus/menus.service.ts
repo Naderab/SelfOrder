@@ -27,7 +27,13 @@ export class MenusService {
     }
   }
   async getMenuById(id: string): Promise<Menu> {
-    const Menu = await this.MenuModel.findOne({ _id: id });
+    const Menu = await this.MenuModel.findOne({ _id: id }).populate({
+      path: 'category_ids',
+      populate: [{
+        path: 'items',
+        model: 'Item'
+      }]
+    }).exec();
     if (Menu) {
       return Menu;
     } else {
