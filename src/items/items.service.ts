@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
@@ -9,8 +10,9 @@ export class ItemsService {
     constructor(
         @InjectModel('Item') private ItemModel: Model<Item>
         ) {}
-        async createItem(createItemDto: CreateItemDto):Promise<Item>{
+        async createItem(createItemDto: CreateItemDto,imageUrl:string):Promise<Item>{
             const Item= new this.ItemModel(createItemDto);
+            Item.image_url=imageUrl;
             return await Item.save();
         }
         async getItems():Promise<Item[]>{

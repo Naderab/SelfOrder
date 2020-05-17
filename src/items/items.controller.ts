@@ -1,7 +1,8 @@
-import { Controller, Get, Param, Delete, Body, Post, Put } from '@nestjs/common';
+import { Controller, Get, Param, Delete, Body, Post, Put, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { Item } from './interfaces/Item.interface';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/createItemDto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('/api/items')
 export class ItemsController {
@@ -16,8 +17,15 @@ export class ItemsController {
     this.ItemService.deleteItem(id);
   }
   @Post('add')
-  createItem(@Body() createItemdto: CreateItemDto): Promise<Item> {
-    return this.ItemService.createItem(createItemdto);
+  @UseInterceptors(FileInterceptor('image'))
+  createItem(@Body() createItemdto: CreateItemDto,@UploadedFile() file): Promise<Item> {
+    
+ 
+      console.log(file);
+      const  imageUrl=file.destination+'/'+file.filename
+      return this.ItemService.createItem(createItemdto,imageUrl);
+ 
+    
   }
 
   @Get('/:id')
@@ -28,4 +36,5 @@ export class ItemsController {
   addModifierGroupToItem(@Param('id') id:string,@Body('idMg') idMg:string ):Promise<Item>{
     return this.ItemService.addModifierGroupToItem(id,idMg);
   }
+ 
 }

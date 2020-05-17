@@ -12,7 +12,8 @@ import { MenusModule } from './menus/menus.module';
     useUnifiedTopology:true,
     useCreateIndex: true,
     useFindAndModify:false
-}), 
+}),
+
 MenusModule,
  AuthModule,
  ModifierGroupModule, 
