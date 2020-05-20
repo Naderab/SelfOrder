@@ -19,7 +19,7 @@ export class CategoryService {
     return await cat.save();
   }
   async getCategories(): Promise<Category[]> {
-    return await this.CategoryModel.find().populate('items').populate('menus');
+    return await this.CategoryModel.find().populate('items').populate('menus','_id title');
   }
   async getCatById(_id: string): Promise<Category> {
     const cat = await this.CategoryModel.findOne({ _id: _id }).populate('item').populate('menus');;
