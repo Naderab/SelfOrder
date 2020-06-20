@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Get, Param, Delete, Put } from '@nestjs/common';
 import { MenusService } from './menus.service';
 import { MenuDto } from './dto/menueDto';
-import { Menu } from './interfaces/Menu.interface';
+import { Menu } from './interfaces/menu.interface';
 
 @Controller('/api/menus')
 export class MenusController {

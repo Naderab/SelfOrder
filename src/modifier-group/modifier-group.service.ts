@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ModifierGroup } from './interfaces/ModifierGroup.interface';
+import { ModifierGroup } from './interfaces/modifier-group.interface';
 import { CreateModifierGroupDto } from './dto/modifierGroupDto';
 
 @Injectable()

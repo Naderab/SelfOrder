@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Get, Param, Delete } from '@nestjs/common';
 import { CreateModifierGroupDto } from './dto/modifierGroupDto';
-import { ModifierGroup } from './interfaces/ModifierGroup.interface';
+import { ModifierGroup } from './interfaces/modifier-group.interface';
 import { ModifierGroupService } from './modifier-group.service';
 
 @Controller('/api/modifier-group')

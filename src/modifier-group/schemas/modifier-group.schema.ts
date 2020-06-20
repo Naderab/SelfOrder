@@ -3,7 +3,19 @@ import * as mongoose from 'mongoose';
 
 export const ModifierGroupSchema = new mongoose.Schema({
   quantity_info: {
-    overrides: [mongoose.Schema.Types.Mixed],
+    overrides: [
+      {
+        context_type: String,
+        context_value: String,
+        quantity: {
+          max_permitted: Number,
+          min_permitted: Number,
+          default_quantity: mongoose.Schema.Types.Mixed,
+          charge_above: mongoose.Schema.Types.Mixed,
+          refund_under: mongoose.Schema.Types.Mixed,
+        },
+      },
+    ],
     quantity: {
       max_permitted: Number,
       min_permitted: Number,
@@ -16,10 +28,11 @@ export const ModifierGroupSchema = new mongoose.Schema({
   external_data: String,
   modifier_options: [
     {
-      types: mongoose.Schema.Types.ObjectId,
-      ref: 'Item',
+      id: { types: mongoose.Schema.Types.ObjectId, ref: 'Item' },
+      type: String
     },
   ],
   display_type: mongoose.Schema.Types.Mixed,
   id: String,
 });
+  

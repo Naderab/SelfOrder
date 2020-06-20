@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Menu } from './interfaces/Menu.interface';
+import { Menu } from './interfaces/menu.interface';
 import { Model } from 'mongoose';
 import { MenuDto } from './dto/menueDto';
 

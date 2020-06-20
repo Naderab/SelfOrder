@@ -10,7 +10,19 @@ export const ItemSchema = new mongoose.Schema({
     calories: mongoose.Schema.Types.Mixed,
   },
   quantity_info: {
-    overrides: [mongoose.Schema.Types.Mixed],
+    overrides: [
+      {
+        context_type: String,
+        context_value: String,
+        quantity: {
+          max_permitted: Number,
+          min_permitted: Number,
+          default_quantity: mongoose.Schema.Types.Mixed,
+          charge_above: mongoose.Schema.Types.Mixed,
+          refund_under: mongoose.Schema.Types.Mixed,
+        },
+      },
+    ],
     quantity: {
       max_permitted: Number,
       min_permitted: Number,
@@ -21,9 +33,7 @@ export const ItemSchema = new mongoose.Schema({
   },
   external_data: mongoose.Schema.Types.Mixed,
   suspension_info: mongoose.Schema.Types.Mixed,
-  modifier_group_ids: [
-    { type: mongoose.Schema.Types.ObjectId, ref: 'ModifierGroup' },
-  ],
+  modifier_group_ids: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ModifierGroup' }],
   image_url: mongoose.Schema.Types.Mixed,
   price_info: {
     price: Number,

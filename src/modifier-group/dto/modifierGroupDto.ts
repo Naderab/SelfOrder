@@ -1,11 +1,11 @@
-import { QuantityInfo2 } from "../interfaces/QuantityInfo2.interface";
-import { ModifierOption } from "../interfaces/ModifierOptions.interface";
+import { QuantityInfo } from "../interfaces/quantity-info.interface";
+import { MenuEntity } from "../interfaces/menu-entity.interface";
 
 export class CreateModifierGroupDto {
-    quantity_info: QuantityInfo2;
+    quantity_info: QuantityInfo;
     title: string;
     external_data: string;
-    modifier_options: ModifierOption[];
+    modifier_options: MenuEntity[];
     display_type?: any;
     id: string;
 }

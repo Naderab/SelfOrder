@@ -1,10 +1,10 @@
 import { Document } from 'mongoose';
 
-import { NutritionalInfo } from './NutritionalInfo';
-import { QuantityInfo } from './QuantityInfo.interface';
-import { ModifierGroupIds } from './ModifierGroupIds.interface';
-import { PriceInfo } from './PriceInfo.interface';
-import { TaxInfo } from './Taxinfo.interface';
+import { NutritionalInfo } from './nutritional-info';
+import { PriceInfo } from './price-info.interface';
+import { TaxInfo } from './tax-info.interface';
+import { QuantityInfo } from '../../modifier-group/interfaces/quantity-info.interface';
+import { ModifierGroupsRules } from './modifier-groups-rules.interface';
 
 export interface Item extends Document {
   description: string;
@@ -13,8 +13,8 @@ export interface Item extends Document {
   quantity_info: QuantityInfo;
   external_data?: any;
   suspension_info?: any;
-  modifier_group_ids: any[];
+  modifier_group_ids: string[];
   image_url?: any;
   price_info: PriceInfo;
-  tax_info: TaxInfo;
+  tax_info?: TaxInfo;
 }

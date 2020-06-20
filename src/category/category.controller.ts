@@ -1,6 +1,6 @@
 import { Controller, Param, Get, Delete, Post, Body, Put } from '@nestjs/common';
 import { CategoryService } from './category.service';
-import { Category } from './interfaces/Category.interfaces';
+import { Category } from './interfaces/category.interfaces';
 import { CreateCategoryDto } from './dto/createCategoryDto';
 
 @Controller('/api/category')

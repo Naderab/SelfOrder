@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
-import { Override2 } from "./Override2.interface";
+import { PriceOverride } from "./price-override.interface";
 
 export interface PriceInfo extends Document {
     price: number;
-    overrides: Override2[];
+    overrides: PriceOverride[];
 }
