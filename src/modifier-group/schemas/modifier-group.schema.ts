@@ -35,4 +35,3 @@ export const ModifierGroupSchema = new mongoose.Schema({
   display_type: mongoose.Schema.Types.Mixed,
   id: String,
 });
-  
