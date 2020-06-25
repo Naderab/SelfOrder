@@ -30,8 +30,4 @@ export interface SelectedItem {
   special_instructions: string;
 }
 
-export interface Cart {
-  items: SelectedItem[];
-  placed_at: Date;
-  totale: number;
-}
+

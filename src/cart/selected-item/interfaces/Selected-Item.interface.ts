@@ -1,6 +1,7 @@
 import { SelectedModifierGroup } from "src/cart/selected-modifier-group/interfaces/Selected-Modifier-Group.interface";
+import { Document } from "mongoose";
 
-export interface SelectedItem {
+export interface SelectedItem extends Document {
     id: string;
     title: string;
     external_data: string;
